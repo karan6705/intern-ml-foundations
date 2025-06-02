@@ -1,0 +1,76 @@
+# lesson1_basics.py
+
+# 1.simple code:
+def say_hello():
+    print("Hello, this is my first week! This is my first Python script.")
+
+# 2. Variables and Data Types:
+def show_data_types():
+    x = 10               # int
+    y = 3.14             # float
+    name = "Karan"      # str
+    is_student = True    # bool
+    my_list = [1, 2, 3]  # list
+    my_tuple = ("a", "b", "c")   # tuple
+    my_dict = {"key": 42, "another": 100}  # dict
+
+    print("x is an integer:", x)
+    print("y is a float:", y)
+    print("name is a string:", name)
+    print("is_student is a boolean:", is_student)
+    print("my_list is a list:", my_list)
+    print("my_tuple is a tuple:", my_tuple)
+    print("my_dict is a dict:", my_dict)
+    
+# some of the functions that I learned today
+# functions practice:
+def greet(person_name):
+    """Returns a greeting string for the given name."""
+    return f" 1st week of the internship, {person_name}!"
+
+def add_numbers(a, b):
+    """Returns the sum of a and b."""
+    return a + b
+
+# 4. OOP small class:
+class Person:
+    """A simple Person class including thier name and age."""
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_hello(self):
+        print(f"Hi, I am {self.name}, and I am {self.age} years old.")
+
+# 5. Basic error handling:
+def divide(a, b):
+    """Returns a/b, or prints an error if b is zero."""
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero!")
+        return None
+
+# main calling everything above:
+def main():
+    say_hello()
+
+    print("\n--- Variables & Data Types ---")
+    show_data_types()
+
+    print("\n--- Functions Demo ---")
+    message = greet("Karan")
+    print(message)
+    result = add_numbers(10, 3.14)
+    print("Sum of 10 and 3.14 is:", result)
+
+    print("\n--- Class (OOP) Demo ---")
+    p = Person("Karan", 20)
+    p.say_hello()
+
+    print("\n--- Error Handling Demo ---")
+    print("10 / 2 =", divide(10, 2))
+    print("5 / 0  =", divide(5, 0))
+
+if __name__ == "__main__":
+    main()
